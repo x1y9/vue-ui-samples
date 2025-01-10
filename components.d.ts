@@ -63,7 +63,6 @@ declare module 'vue' {
     IMaterialSymbolsForward: typeof import('~icons/material-symbols/forward')['default']
     IMdiSparklesOutline: typeof import('~icons/mdi/sparkles-outline')['default']
     IMdiTrash: typeof import('~icons/mdi/trash')['default']
-    IMeteoconsSunHot: typeof import('~icons/meteocons/sun-hot')['default']
     IMynauiLogout: typeof import('~icons/mynaui/logout')['default']
     Input: typeof import('./src/components/ui/input/Input.vue')['default']
     IRiMoreLine: typeof import('~icons/ri/more-line')['default']
