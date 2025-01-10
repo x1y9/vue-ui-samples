@@ -1,31 +1,13 @@
 <script setup lang="ts">
-import {
-  AudioWaveform,
-  BadgeCheck,
-  Bell,
-  BookOpen,
-  Bot,
-  ChevronRight,
-  ChevronsUpDown,
-  Command,
-  CreditCard,
-  Folder,
-  Forward,
-  Frame,
-  GalleryVerticalEnd,
-  LogOut,
-  Map,
-  MoreHorizontal,
-  PieChart,
-  Plus,
-  Settings2,
-  Sparkles,
-  SquareTerminal,
-  Trash2,
-} from 'lucide-vue-next'
+
+//动态图标只能手动加载
+import IconAccountBox from '~icons/mdi/account-box'
+import IconWpfAudiowave from '~icons/wpf/audiowave'
+import IconIconoirKeyCommand from '~icons/iconoir/key-command'
+import IconLucideSquareTerminal from '~icons/lucide/square-terminal'
+import IconHugeiconsBot from '~icons/hugeicons/bot'
 import { ref } from 'vue'
 
-// This is sample data.
 const data = {
   user: {
     name: 'shadcn',
@@ -35,17 +17,17 @@ const data = {
   teams: [
     {
       name: 'Acme Inc',
-      logo: GalleryVerticalEnd,
+      logo: IconAccountBox,
       plan: 'Enterprise',
     },
     {
       name: 'Acme Corp.',
-      logo: AudioWaveform,
+      logo: IconWpfAudiowave,
       plan: 'Startup',
     },
     {
       name: 'Evil Corp.',
-      logo: Command,
+      logo: IconIconoirKeyCommand,
       plan: 'Free',
     },
   ],
@@ -53,7 +35,7 @@ const data = {
     {
       title: 'Playground',
       url: '#',
-      icon: SquareTerminal,
+      icon: IconLucideSquareTerminal,
       isActive: true,
       items: [
         {
@@ -73,7 +55,7 @@ const data = {
     {
       title: 'Models',
       url: '#',
-      icon: Bot,
+      icon: IconHugeiconsBot,
       items: [
         {
           title: 'Genesis',
@@ -92,7 +74,7 @@ const data = {
     {
       title: 'Documentation',
       url: '#',
-      icon: BookOpen,
+      icon: IconIconoirKeyCommand,
       items: [
         {
           title: 'Introduction',
@@ -115,7 +97,7 @@ const data = {
     {
       title: 'Settings',
       url: '#',
-      icon: Settings2,
+      icon: IconIconoirKeyCommand,
       items: [
         {
           title: 'General',
@@ -140,17 +122,17 @@ const data = {
     {
       name: 'Design Engineering',
       url: '#',
-      icon: Frame,
+      icon: IconIconoirKeyCommand,
     },
     {
       name: 'Sales & Marketing',
       url: '#',
-      icon: PieChart,
+      icon: IconIconoirKeyCommand,
     },
     {
       name: 'Travel',
       url: '#',
-      icon: Map,
+      icon: IconIconoirKeyCommand,
     },
   ],
 }
@@ -181,7 +163,7 @@ function setActiveTeam(team: typeof data.teams[number]) {
                     <span class="truncate font-semibold">{{ activeTeam.name }}</span>
                     <span class="truncate text-xs">{{ activeTeam.plan }}</span>
                   </div>
-                  <ChevronsUpDown class="ml-auto" />
+                  <i-lucide-chevrons-up-down class="ml-auto" />
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
               <DropdownMenuContent
@@ -208,7 +190,7 @@ function setActiveTeam(team: typeof data.teams[number]) {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem class="gap-2 p-2">
                   <div class="flex size-6 items-center justify-center rounded-md border bg-background">
-                    <Plus class="size-4" />
+                    <i-ic-baseline-plus class="size-4" />
                   </div>
                   <div class="font-medium text-muted-foreground">
                     Add team
@@ -235,7 +217,7 @@ function setActiveTeam(team: typeof data.teams[number]) {
                   <SidebarMenuButton :tooltip="item.title">
                     <component :is="item.icon" />
                     <span>{{ item.title }}</span>
-                    <ChevronRight class="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+                    <i-material-symbols-chevron-right class="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                   </SidebarMenuButton>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
@@ -272,22 +254,22 @@ function setActiveTeam(team: typeof data.teams[number]) {
               <DropdownMenu>
                 <DropdownMenuTrigger as-child>
                   <SidebarMenuAction show-on-hover>
-                    <MoreHorizontal />
+                    <i-hugeicons-more-horizontal />
                     <span class="sr-only">More</span>
                   </SidebarMenuAction>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent class="w-48 rounded-lg" side="bottom" align="end">
                   <DropdownMenuItem>
-                    <Folder class="text-muted-foreground" />
+                    <i-material-symbols-folder-outline class="text-muted-foreground" />
                     <span>View Project</span>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <Forward class="text-muted-foreground" />
+                    <i-material-symbols-forward class="text-muted-foreground" />
                     <span>Share Project</span>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>
-                    <Trash2 class="text-muted-foreground" />
+                    <i-mdi-trash class="text-muted-foreground" />
                     <span>Delete Project</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -295,7 +277,7 @@ function setActiveTeam(team: typeof data.teams[number]) {
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton class="text-sidebar-foreground/70">
-                <MoreHorizontal class="text-sidebar-foreground/70" />
+                <i-ri-more-line />
                 <span>More</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -321,7 +303,7 @@ function setActiveTeam(team: typeof data.teams[number]) {
                     <span class="truncate font-semibold">{{ data.user.name }}</span>
                     <span class="truncate text-xs">{{ data.user.email }}</span>
                   </div>
-                  <ChevronsUpDown class="ml-auto size-4" />
+                  <i-lucide-chevrons-up-down class="ml-auto size-4" />
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
               <DropdownMenuContent class="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg" side="bottom" align="end" :side-offset="4">
@@ -342,28 +324,28 @@ function setActiveTeam(team: typeof data.teams[number]) {
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
                   <DropdownMenuItem>
-                    <Sparkles />
+                    <i-mdi-sparkles-outline />
                     Upgrade to Pro
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
                   <DropdownMenuItem>
-                    <BadgeCheck />
+                    <i-f7-text-badge-checkmark/>
                     Account
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <CreditCard />
+                    <i-majesticons-creditcard-line/>
                     Billing
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <Bell />
+                    <i-lets-icons-bell-light/>
                     Notifications
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
-                  <LogOut />
+                  <i-mynaui-logout/>
                   Log out
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -399,7 +381,9 @@ function setActiveTeam(team: typeof data.teams[number]) {
           <div class="aspect-video rounded-xl bg-muted/50" />
           <div class="aspect-video rounded-xl bg-muted/50" />
         </div>
-        <div class="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+        <div class="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min">
+          <i-meteocons-sun-hot  class="text-5xl"/>
+        </div>
       </div>
     </SidebarInset>
   </SidebarProvider>
