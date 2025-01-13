@@ -21,7 +21,7 @@ export default defineConfig({
     }),
     Icons(),
     visualizer({
-      open: true, // 自动打开分析页面
+      open: false, // 自动打开分析页面
     }),
   ],
   css:{
