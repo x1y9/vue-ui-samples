@@ -1,25 +1,20 @@
 
-
+<script setup lang="ts">
+import { useAppStore } from '@/store'
+const appStore = useAppStore()
+</script>
 <template>
-    <SidebarProvider>
+    <SidebarProvider :defaultOpen="!appStore.sidebarCollapse">
       <Sidebar collapsible="icon">
         <SidebarHeader>
-          <SidebarMenu>
-            <SidebarMenuItem>
-              <SidebarMenuButton size="lg" asChild>
-                <a href="#" >
-                  <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                    <i-wpf-audiowave  />
-                  </div>
-                  <div className="grid flex-1 text-left text-sm leading-tight">
-                    <span className="truncate font-semibold">Acme Inc</span>
-                    <span className="truncate text-xs">Enterprise</span>
-                  </div>
-                </a>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-          </SidebarMenu>
-          <SidebarTrigger/>            
+          <!-- size="lg"大小更好，但收起时不好看 -->
+          <SidebarMenuButton>
+            <i-wpf-audiowave />
+            <div className="grid flex-1 text-left text-sm">
+              <span>Acme Inc</span>
+              <span className="text-xs">Enterprise</span>
+            </div>
+          </SidebarMenuButton>
         </SidebarHeader>
         <SidebarContent>
           <SidebarGroup>

@@ -5,6 +5,7 @@ import AppSidebar from './app-sidebar.vue';
 <template>
   <AppSidebar>
     
-    Setting
+    <SidebarTrigger />     
+
   </AppSidebar>
 </template>
