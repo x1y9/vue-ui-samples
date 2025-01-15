@@ -1,5 +1,5 @@
 <template>
-    <div>
-      <page-header>404</page-header>
-    </div>
-  </template>
+  <div>
+    404
+  </div>
+</template>

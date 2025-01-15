@@ -1,5 +1,10 @@
+<script setup lang="ts">
+import AppSidebar from './app-sidebar.vue';
+</script>
+
 <template>
-    <div>
-      <page-header>Settings</page-header>
-    </div>
-  </template>
+  <AppSidebar>
+    
+    Setting
+  </AppSidebar>
+</template>

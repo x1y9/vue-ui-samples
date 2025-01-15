@@ -1,5 +1,5 @@
 <template>
-    <div>
-      <page-header>Login</page-header>
-    </div>
-  </template>
+  <div>
+    Login
+  </div>
+</template>
