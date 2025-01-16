@@ -18,7 +18,7 @@ const appStore = useAppStore()
         </SidebarHeader>
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel>Projects</SidebarGroupLabel>
+            <SidebarGroupLabel>Menu</SidebarGroupLabel>
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton as-child>
